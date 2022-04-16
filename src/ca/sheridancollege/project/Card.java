@@ -6,20 +6,99 @@
 package ca.sheridancollege.project;
 
 /**
- * A class to be used as the base Card class for the project. Must be general enough to be instantiated for any Card
- * game. Students wishing to add to the code should remember to add themselves as a modifier.
- *
+ * General card class for Blackjack. contains cardValue for blackjack, and suit and rank enumerator values.
+ * 
  * @author dancye
+ * @author Volodymyr Suprun April 2022
+ * @author Adarshpreet Singh April 2022
+ * @author Maryam Khatibzadeh Azad April 2022
  */
-public abstract class Card {
+public class Card {
     //default modifier for child classes
-
+    private final Suit suit;
+    private final Rank rank;
+    private final int value;
+    
+    public Card(Suit suit, Rank rank) {
+        this.rank = rank;
+        this.suit = suit;
+        this.value = cardValue(rank);
+    }
+    
     /**
-     * Students should implement this method for their specific children classes
-     *
-     * @return a String representation of a card. Could be an UNO card, a regular playing card etc.
+     * @return a String representation of a card. depends on the enumeration classes what it outputs.
      */
     @Override
-    public abstract String toString();
-
+    public String toString() {
+        return this.rank.toString() + " of " + this.suit.toString();
+    }
+    
+    public Rank getRank() {
+        return rank;
+    }
+    
+    public Suit getSuit() {
+        return suit;
+    }
+    
+    public int getValue() {
+        return value;
+    }
+    
+    private int cardValue(Rank rank) {
+        switch(rank) {
+            
+            case TWO: {
+                return 2;
+            }
+            
+            case THREE: {
+                return 3;
+            }
+            
+            case FOUR: {
+                return 4;
+            }
+            
+            case FIVE: {
+                return 5;
+            }
+            
+            case SIX: {
+                return 6;
+            }
+            
+            case SEVEN: {
+                return 7;
+            }
+            
+            case EIGHT: {
+                return 8;
+            }
+            
+            case NINE: {
+                return 9;
+            }
+            
+            case TEN: {
+                return 10;
+            }
+            
+            case JACK: {
+                return 10;
+            }
+            
+            case QUEEN: {
+                return 10;
+            }
+            
+            case KING: {
+                return 10;
+            }
+            //This will be what ACE defaults to as it requires player or dealer choice to set.
+            default: {
+                return 0;
+            }
+        }
+    }
 }
