@@ -13,7 +13,9 @@ import java.util.ArrayList;
  * @author Maryam Khatibzadeh Azad April 2022
  */
 public abstract class Game {
-
+    
+    //The game continuing is decided by userPlaying being true
+    protected boolean userPlaying = true;
     private final String name;//the title of the game
     protected ArrayList<Player> players;// the players of the game
 
@@ -42,7 +44,16 @@ public abstract class Game {
     public void setPlayers(ArrayList<Player> players) {
         this.players = players;
     }
+    
+    //setter for userPlaying 
+    public void setUserPlaying(boolean bool) {
+        this.userPlaying = bool;
+    }
 
+    //setter for userPlaying 
+    public boolean getUserPlaying() {
+        return this.userPlaying;
+    }
     /**
      * Play the game. This might be one method or many method calls depending on your game.
      */

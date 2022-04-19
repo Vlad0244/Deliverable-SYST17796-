@@ -10,8 +10,6 @@ import java.util.Scanner;
  * @author Maryam Khatibzadeh Azad April 2022
  */
 public class Blackjack extends Game{
-    //The game continuing is decided by userPlaying being true
-    private boolean userPlaying = true;
     //keeps score of each player
     private int scoreUser = 0;
     private int scoreDealer = 0;
@@ -163,10 +161,6 @@ public class Blackjack extends Game{
                 }
             }
         }
-    }
-    //setter for userPlaying 
-    public void setUserPlaying(boolean bool) {
-        this.userPlaying = bool;
     }
     
     //declares the winner between who got more round wins and ends the program by setting userPlaying to false.

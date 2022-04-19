@@ -35,6 +35,10 @@ public abstract class Player {
         return name;
     }
     
+    public ArrayList<Card> getHand() {
+        return this.hand;
+    }
+    
     public boolean getContinueToPlayRound() {
         return this.continueToPlayRound;
     }
